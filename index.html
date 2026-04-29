@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html>
-     <head>
-        <meta charset = "UTF-8">
-        <title>113403510 陳少畇 form</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <title>JS interval</title>
     </head>
     <body>
-        <form action = "/action_page.php">
-            <label for = "fname">First name :</label><br>
-            <input type = "text" id = "fname" name = "fname" value = "Your first name"><br>
-            <label for = "lname">Lirst name :</label><br>
-            <input type = "text" id = "lname" name = "lname" value = "Your last name"><br>
-            <label for = "studentId">Student ID :</label><br>
-            <input type = "text" id = "studentId" name = "studetnId" value = "Your student ID"><br><br>
-            <input type = "submit" value = "Submit">
-            <input type = "reset">
-        </form>
+        <p>Please inpet a number between 150 and 300:</p>
+        <input id="numb" type="text">
+        <button type="button" onclick="myFunction()">Submit</button>
+
+        <p id="message"></p>
+
+        <script>
+            function myFunction(){
+                var x =document.getElementById("numb").value;
+                var text;
+
+                if(x >= 150 && x <= 300){
+                    text = "Input OK";
+                }else if(x >300){
+                    text = "Value too large";
+                }else if(x < 150){
+                    text = "Value too small";
+                }
+
+                document.getElementById("message").innerHTML = text;
+            }
+        </script>
+        
     </body>
 </html>
